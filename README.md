@@ -8,17 +8,17 @@
 hex offset | length (bytes) | name / desc
 ---------- | -------------- | -----------
 0 | 32 | Current ROM's MD5 Hash
-20 | 40 | rdram register
-48 | 36 | MI register
-6c | 52 | pi register
-A0 | 52 | sp register
-D4 | 8 | rsp register
-DC | 16 | si register
-EC | 60 | vi register
-128 | 32 | ri register
-148 | 40 | ai register
-170 | 48 | dpc register
-1A0 | 16 | dps register
+20 | 40 | RDRAM registers
+48 | 36 | MI registers
+6c | 52 | PI registers
+A0 | 52 | SP registers
+D4 | 8 | RSP register
+DC | 16 | SI registers
+EC | 60 | VI registers
+128 | 32 | RI registers
+148 | 40 | AI registers
+170 | 48 | DPC registers
+1A0 | 16 | DPS registers
 1B0 | 8388608 | RDRAM - Always 8MB since there's no option to disable expansion slot
 8001B0 | 4096 | SP DMEM
 8011B0 | 4096 | SP IMEM
@@ -31,21 +31,21 @@ Flashram info
 802200 | 4 | Erase Offset
 802204 | 4 | Write Pointer
 ​
-802208 | 1048576 | tlb LUT r
-902208 | 1048576 | tlb LUT w
-A02208 | 4 | llbit
-A0220C | 256 | reg
-A0230C | 256 | reg cop0 - It's an unsigned int array with the length of 32 and it gives each index 8 bytes for old version compatibility
-A0240C | 8 | lo
-A02414 | 8 | hi
-A0241C | 256 | reg cop1 fgr 64
-A0251C | 4 | FCR0
-A02520 | 4 | FCR31
-A02524 | 1664 | tlb e
-A02BA4 | 4 | If emu is not using a dynamic core and uses the interpcore then it stores the "interp address" or else it stores the "PC address"
-A02BA8 | 4 | next interupt
-A02BAC | 4 | next vi
-A02BB0 | 4 | vi field
+802208 | 1048576 | TLB LUT R
+902208 | 1048576 | TLB LUT W
+A02208 | 4 | LLBit register
+A0220C | 256 | CPU registers
+A0230C | 256 | MMU registers
+A0240C | 8 | lo register
+A02414 | 8 | hi register
+A0241C | 256 | FPU registers
+A0251C | 4 | FCR0 register
+A02520 | 4 | FCR31 register (FPU status)
+A02524 | 1664 | TLB E
+A02BA4 | 4 | PC register
+A02BA8 | 4 | next interrupt
+A02BAC | 4 | next VI
+A02BB0 | 4 | VI field
 ​
 EventQueue info
 A02BB4 | - | -
@@ -63,4 +63,4 @@ A02BBC + EventQueue Length | 4 | Movie's "UID"
 A02BC0 + EventQueue Length | 4 | Input frame count when this ST was made
 A02BC4 + EventQueue Length | 4 | VI frame count when this ST was made
 A02BC8 + EventQueue Length | 4 | length samples - Movie's length sample count when this ST file was made
-A02BCC + EventQueue Length | 4 * (length samples + 1) | Movie button presses and joystick x y in an array
+A02BCC + EventQueue Length | 4 * (length samples + 1) | Movie input data up till point of ST creation
