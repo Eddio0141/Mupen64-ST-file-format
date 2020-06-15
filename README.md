@@ -5,7 +5,7 @@
 ### All raw data is stored as a 4 byte aligned little endian
 
 
-hex offset						length (bytes)				name / desc
+hex offset | length (bytes) | name / desc
 0								32							Current ROM's MD5 Hash
 20								40							rdram register
 48								36							MI register
