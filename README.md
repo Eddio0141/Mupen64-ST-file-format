@@ -1,9 +1,9 @@
-# Mupen64-ST-file-format
-## File format of the save state for the mupen 64 emulator
+# Save state file (.st file) format for the mupen 64 emulator
 
 
 ### ST files are all compressed using the gzip compression - https://en.wikipedia.org/wiki/Gzip
 ### All raw data is stored as a 4 byte aligned little endian
+
 
 hex offset						length (bytes)				name / desc
 0								32							Current ROM's MD5 Hash
