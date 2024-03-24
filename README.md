@@ -64,3 +64,8 @@ A02BC0 + EventQueue Length | 4 | Input frame count when this ST was made
 A02BC4 + EventQueue Length | 4 | VI frame count when this ST was made
 A02BC8 + EventQueue Length | 4 | length samples - Movie's length sample count when this ST file was made
 A02BCC + EventQueue Length | 4 * (length samples + 1) | Movie input data up till point of ST creation
+A02BCC + EventQueue Length + 4 * (length samples + 1) | 4 | Video section identifier - `0x53435200` (st file ends here on savestates without this section)
+A02BCC + EventQueue Length + 4 * (length samples + 1) + 4 | 4 | Video buffer width
+A02BCC + EventQueue Length + 4 * (length samples + 1) + 8 | 4 | Video buffer height
+A02BCC + EventQueue Length + 4 * (length samples + 1) + 12 | width * height * 3 | Video buffer data
+
